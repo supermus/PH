@@ -15,5 +15,26 @@ public class hopitalDaoImpl implements IhopitalDao{
 		em.persist(u);
 	}
 	
+	@PersistenceContext
+	private EntityManager em;
 
+	@Override
+	public void ajouterUser(User u) {
+		em.persist(u);
+	}
+	@PersistenceContext
+	private EntityManager em;
+
+	@Override
+	public void ajouterUser(User u) {
+		em.persist(u);
+	}
+	@PersistenceContext
+	private EntityManager em;
+
+	@Override
+	public void ajouterUser(User u) {
+		em.persist(u);
+	}
+	
 }
