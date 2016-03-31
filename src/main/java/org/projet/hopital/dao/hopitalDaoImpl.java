@@ -1,5 +1,7 @@
 package org.projet.hopital.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -15,26 +17,22 @@ public class hopitalDaoImpl implements IhopitalDao{
 		em.persist(u);
 	}
 	
-	@PersistenceContext
 	private EntityManager em;
-
-	@Override
-	public void ajouterUser(User u) {
-		em.persist(u);
+	
+	public void AjouterD(Patient p){
+		em.persist(p);
+		System.out.println("le dossier est bien crée");
+		
 	}
-	@PersistenceContext
-	private EntityManager em;
-
-	@Override
-	public void ajouterUser(User u) {
-		em.persist(u);
+	public Patient recherche(String nsecu){
+		return em.find(Patient.class,nsecu);
 	}
-	@PersistenceContext
-	private EntityManager em;
-
-	@Override
-	public void ajouterUser(User u) {
-		em.persist(u);
+	public List<Patient> listPatients(String nsecu){
+		return 0;
+	}
+	public void deletePatient(String nsecu){
+		Patient p=em.find(Patient.class,nsecu);
+		em.remove(p);
 	}
 	
 }
