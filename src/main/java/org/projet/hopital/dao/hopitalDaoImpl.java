@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.projet.hopital.entities.Patient;
 import org.projet.hopital.entities.User;
 
 public class hopitalDaoImpl implements IhopitalDao{
@@ -17,7 +18,6 @@ public class hopitalDaoImpl implements IhopitalDao{
 		em.persist(u);
 	}
 	
-	private EntityManager em;
 	
 	public void AjouterD(Patient p){
 		em.persist(p);
@@ -28,7 +28,7 @@ public class hopitalDaoImpl implements IhopitalDao{
 		return em.find(Patient.class,nsecu);
 	}
 	public List<Patient> listPatients(String nsecu){
-		return 0;
+		return null;
 	}
 	public void deletePatient(String nsecu){
 		Patient p=em.find(Patient.class,nsecu);
