@@ -9,7 +9,7 @@ import org.projet.hopital.entities.Patient;
 import org.projet.hopital.entities.User;
 
 public class hopitalDaoImpl implements IhopitalDao{
-	
+	//mus comitta blast sarboute
 	@PersistenceContext
 	private EntityManager em;
 
