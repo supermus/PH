@@ -1,12 +1,12 @@
 package org.projet.hopital.metier;
 
 import org.projet.hopital.dao.IhopitalDao;
-import org.projet.hopital.entities.User;
+import org.projet.hopital.entities.Compte;
 
 public class HopitalMetierImpl implements IAdminHopitalMetier{
 	private IhopitalDao dao;
 	@Override
-	public void ajouterUser(User u) {
+	public void ajouterUser(Compte u) {
 		dao.ajouterUser(u);
 		
 	}

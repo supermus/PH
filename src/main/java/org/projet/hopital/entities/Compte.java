@@ -10,12 +10,9 @@ import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
 @Entity
-@Table(name="user")
-
-public class User implements Serializable{
+@Table(name="compte")
+public class Compte implements Serializable{
 	
-	
-	//testcommit
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long iduser;
@@ -23,7 +20,6 @@ public class User implements Serializable{
 	private String username;
 	private String password;
 	private boolean activated;
-	
 	
 	public Long getIduser() {
 		return iduser;
@@ -49,15 +45,17 @@ public class User implements Serializable{
 	public void setActivated(boolean activated) {
 		this.activated = activated;
 	}
-	public User() {
+	public Compte(Long iduser, String username, String password,
+			boolean activated) {
 		super();
-	}
-	public User(String username, String password,boolean activated) {
-		super();
+		this.iduser = iduser;
 		this.username = username;
 		this.password = password;
 		this.activated = activated;
 	}
+	
+	
+	
 	
 		
 }

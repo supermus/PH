@@ -1,7 +1,7 @@
 package org.projet.hopital.metier;
 
-import org.projet.hopital.entities.User;
+import org.projet.hopital.entities.Compte;
 
 public interface IAdminHopitalMetier {
-	public void ajouterUser(User u);
+	public void ajouterUser(Compte u);
 }
