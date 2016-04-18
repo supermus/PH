@@ -13,13 +13,16 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Table(name="compte")
 public class Compte implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long iduser;
 	@NotEmpty
 	private String username;
 	private String password;
-	private boolean activated;
+	private boolean activated; 
+	
+	
 	
 	public Long getIduser() {
 		return iduser;

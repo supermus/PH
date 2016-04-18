@@ -1,31 +1,40 @@
 package org.projet.hopital.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="employee")
 public class Employee implements Serializable{
 	
-	
+
+	private static final long serialVersionUID = 1L;
 	private String prenom;
 	private String nom;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long matricule;
-	private Long nsecu;
+	private Long idEmploye;
 	
+	@OneToMany
+	private List<DossierPatient> dossiers;
 	
-	public Employee(String prenom, String nom, Long nsecu) {
+	@OneToMany
+	private List<RendezVous> rdv;
+	
+	@OneToOne
+	private Role role;
+	
+	@OneToOne
+	private Compte compte;
+	
+	public Employee(String prenom, String nom, Long idEmploye) {
 		super();
 		this.prenom = prenom;
 		this.nom = nom;
-		this.nsecu = nsecu;
+		this.idEmploye = idEmploye;
 	}
 
 	public String getPrenom() {
@@ -53,11 +62,11 @@ public class Employee implements Serializable{
 	}
 
 	public Long getNsecu() {
-		return nsecu;
+		return idEmploye;
 	}
 
 	public void setNsecu(Long nsecu) {
-		this.nsecu = nsecu;
+		this.idEmploye = nsecu;
 	}
 	
 	
