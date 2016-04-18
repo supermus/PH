@@ -1,5 +1,5 @@
 package org.projet.hopital.entities;
-
+//entités jpa terminée
 import java.util.ArrayList;
 import java.util.Collection;
 
