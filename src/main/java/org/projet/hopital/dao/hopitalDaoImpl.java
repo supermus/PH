@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 import org.projet.hopital.entities.*;
 
 public class hopitalDaoImpl implements IhopitalDao{
-
+//sALUT
 	@Override
 	public DossierPatient rechercherDossier(long idDossierPatient) {
 		
