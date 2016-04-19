@@ -1,20 +1,20 @@
 package org.projet.hopital.entities;
 import java.io.Serializable;
-import javax.persistence.Entity;
+
 import javax.persistence.*;
-import javax.persistence.Table;
 @Entity
-@Table(name="employee")
+@Table(name="role")
 public class Role implements Serializable {
 private static final long serialVersionUID = 1L;
+@Id
+@GeneratedValue(strategy=GenerationType.IDENTITY)
 private int idRole;
 private String nomRole;
 							
 @ManyToOne
 @JoinColumn( name = "idEmploye" )
 private Employee employe;
-@OneToOne(mappedBy="role")
-private Compte compte; 
+
 public int getIdRole() {
 	return idRole;
 }
@@ -27,4 +27,14 @@ public String getNomRole() {
 public void setNomRole(String nomRole) {
 	this.nomRole = nomRole;
 }
+public Role() {
+	super();
+}
+public Role(String nomRole, Employee employe) {
+	super();
+	this.nomRole = nomRole;
+	this.employe = employe;
+}
+
+
 }

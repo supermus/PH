@@ -30,9 +30,8 @@ public class RendezVous implements Serializable {
 		
 	}
 
-	public RendezVous(Long idRdv, String titreRdv, String descriptionRdv,
+	public RendezVous(String titreRdv, String descriptionRdv,
 			int heure, Date date, Service service) {
-		this.idRdv = idRdv;
 		this.titreRdv = titreRdv;
 		this.descriptionRdv = descriptionRdv;
 		this.heure = heure;

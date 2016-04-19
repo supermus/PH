@@ -1,19 +1,22 @@
 package org.projet.hopital.entities;
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
-@Table(name="patient")
+@Table(name="dossierpatient")
 public class DossierPatient {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idDossierPatient;
 	private Date dateCreation;
+	@OneToOne
 	private Medical dossierMedical;
+	@OneToOne
 	private Administratif dossierAdministratif;
 	
 	public DossierPatient() {
