@@ -68,6 +68,22 @@ public class Employee implements Serializable{
 	public void setNsecu(Long nsecu) {
 		this.idEmploye = nsecu;
 	}
+
+	public Long getIdEmploye() {
+		return idEmploye;
+	}
+
+	public void setIdEmploye(Long idEmploye) {
+		this.idEmploye = idEmploye;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
 	
 	
 	
