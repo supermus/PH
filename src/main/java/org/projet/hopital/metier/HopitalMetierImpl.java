@@ -8,58 +8,55 @@ import org.projet.hopital.entities.RendezVous;
 import org.projet.hopital.entities.Role;
 
 public class HopitalMetierImpl implements IHopitalMetier {
-
+	private IHopitalMetier dao;
 	@Override
 	public DossierPatient rechercherDossier(long idDossierPatient) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.rechercherDossier(idDossierPatient);
 	}
 
 	@Override
 	public List<DossierPatient> listeDossierPatient() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.listeDossierPatient();
 	}
 
 	@Override
 	public void modifierDossier(DossierPatient dp) {
-		// TODO Auto-generated method stub
+		dao.modifierDossier(dp);
 
 	}
 
 	@Override
 	public long ajouterDossier(DossierPatient dossier) {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.ajouterDossier(dossier);
 	}
 
 	@Override
 	public void ajouterRdv(long idDossierPatient, RendezVous rdv) {
-		// TODO Auto-generated method stub
+		dao.ajouterRdv(idDossierPatient, rdv);
 
 	}
 
 	@Override
 	public void modifierRdv(RendezVous rdv) {
-		// TODO Auto-generated method stub
+		dao.modifierRdv(rdv);
 
 	}
 
 	@Override
 	public void supprimerRdv(long idDossierPatient, RendezVous rdv) {
-		// TODO Auto-generated method stub
+		dao.supprimerRdv(idDossierPatient, rdv);
 
 	}
 
 	@Override
 	public long ajouterEmployee(Employee employee) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return dao.ajouterEmployee(employee);
 	}
 
 	@Override
 	public void attribuerRole(long idEmploye, Role r) {
-		// TODO Auto-generated method stub
+		dao.attribuerRole(idEmploye, r);
 
 	}
 

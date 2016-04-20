@@ -1,14 +1,8 @@
-
-
 package org.projet.hopital.dao;
 
 import  org.projet.hopital.entities.*;
 
 import java.util.List;
-
-
-
-
 
 public interface IhopitalDao {
 	
