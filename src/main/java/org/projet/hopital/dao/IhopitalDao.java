@@ -6,10 +6,6 @@ import  org.projet.hopital.entities.*;
 
 import java.util.List;
 
-
-
-
-
 public interface IhopitalDao {
 	
 	public DossierPatient rechercherDossier (long idDossierPatient);
