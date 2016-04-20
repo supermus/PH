@@ -70,15 +70,15 @@ public class hopitalDaoImpl implements IhopitalDao{
 	}
 
 	@Override
-	public void modifierRdv(DossierPatient dp, RendezVous rdv) {
-		// TODO Auto-generated method stub
-		
+	public void modifierRdv(RendezVous rdv) {
+	em.merge(rdv);
 	}
 
 	@Override
-	public boolean supprimerRdv(DossierPatient dp, RendezVous rdv) {
-		// TODO Auto-generated method stubCJEECEJKEBDCLJ
-		return false;
+	public void supprimerRdv(long idDossierPatient, RendezVous rdv) {
+		DossierPatient dp=em.find(DossierPatient.class, idDossierPatient);
+		listeDossierPatient().remove(rdv);
+				
 	}
 	
 	
