@@ -9,7 +9,7 @@ import org.projet.hopital.entities.RendezVous;
 import org.projet.hopital.entities.Role;
 import org.springframework.transaction.annotation.Transactional;
 @Transactional
-public class HopitalMetierImpl implements IHopitalMetier {
+public class HopitalMetierImpl implements IAdminMetier {
 	private IhopitalDao dao;
 	
 	

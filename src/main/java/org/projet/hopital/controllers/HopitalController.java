@@ -1,6 +1,6 @@
 package org.projet.hopital.controllers;
 
-import org.projet.hopital.metier.IHopitalMetier;
+import org.projet.hopital.metier.IAdminMetier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +13,7 @@ public class HopitalController {
 	// appel à la couche métier via l'interface IAdminHopitalMetier + injection
 	
 	@Autowired
-	private IHopitalMetier metier;
+	private IAdminMetier metier;
 	
 	@RequestMapping(value="/index")
 	public String Index(Model model){
