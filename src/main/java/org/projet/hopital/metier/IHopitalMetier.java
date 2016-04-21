@@ -8,7 +8,8 @@ import org.projet.hopital.entities.RendezVous;
 import org.projet.hopital.entities.Role;
 
 public interface IHopitalMetier {
-public DossierPatient rechercherDossier (long idDossierPatient);
+	
+	public DossierPatient rechercherDossier (long idDossierPatient);
 	
 	public List<DossierPatient> listeDossierPatient();
 	

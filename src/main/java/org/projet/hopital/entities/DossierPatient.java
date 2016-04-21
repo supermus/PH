@@ -15,41 +15,32 @@ public class DossierPatient {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idDossierPatient;
-	private Date dateCreation;
+	private String dateCreation;
 	private Medical dossierMedical;
 	private Administratif dossierAdministratif;
 	private List<RendezVous> listRdv;
 	
 	
-	public DossierPatient() {
+	public DossierPatient(String string, Medical medical, Administratif administratif, List<RendezVous> list) {
 		super();
 	}
 	
-	
-	
-	
-	public List<RendezVous> getListRdv() {
-		return listRdv;
-	}
-
-
-
-
-	public void setListRdv(List<RendezVous> listRdv) {
-		this.listRdv = listRdv;
-	}
-
-
-
-
-	public DossierPatient(Date dateCreation) {
+	public DossierPatient(String dateCreation) {
 		super();
 		this.dateCreation = dateCreation;
 		this.dossierMedical = new Medical();
 		this.dossierAdministratif = new Administratif();
 	}
-
 	
+	
+	public List<RendezVous> getListRdv() {
+		return listRdv;
+	}
+	
+	public void setListRdv(List<RendezVous> listRdv) {
+		this.listRdv = listRdv;
+	}
+
 	public Long getIdDossierPatient() {
 		return idDossierPatient;
 	}
@@ -60,12 +51,12 @@ public class DossierPatient {
 	}
 
 	
-	public Date getDateCreation() {
+	public String getDateCreation() {
 		return dateCreation;
 	}
 
 	
-	public void setDateCreation(Date dateCreation) {
+	public void setDateCreation(String dateCreation) {
 		this.dateCreation = dateCreation;
 	}
 

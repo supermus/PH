@@ -32,4 +32,9 @@
 	</bean>
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	<context:annotation-config></context:annotation-config>
-</beans>
+	
+	<bean id="dao" class="org.projet.hopital.dao.hopitalDaoImpl"></bean>
+	<bean id="metier" class="org.projet.hopital.metier.HopitalMetierImpl">
+		<property name="dao" ref="dao"></property>
+	</bean>
+</beans> 

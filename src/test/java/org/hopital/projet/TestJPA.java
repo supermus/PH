@@ -1,8 +1,13 @@
 package org.hopital.projet;
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
+import org.projet.hopital.entities.*;
+import org.projet.hopital.metier.IHopitalMetier;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestJPA {
@@ -13,9 +18,18 @@ public class TestJPA {
 	@Test
 	public void test() {
 		try {
-			ClassPathXmlApplicationContext app=
+			ClassPathXmlApplicationContext context=
 		new ClassPathXmlApplicationContext(new String[]{"applicationContext.xml"});
-			assertTrue(true);
+			
+			IHopitalMetier metier = (IHopitalMetier) context.getBean("metier");
+			List<DossierPatient> dossierpatient1 = metier.listeDossierPatient();
+			metier.ajouterDossier(new DossierPatient("03/06/2000",new Medical(),new Administratif(),new ArrayList<RendezVous>()));
+			metier.ajouterDossier(new DossierPatient("03/06/2001",new Medical(),new Administratif(),new ArrayList<RendezVous>()));
+			
+			List<DossierPatient> dossierpatient2 = metier.listeDossierPatient();
+			assertTrue(dossierpatient2.size()==dossierpatient1.size()+2);
+			
+			
 		} catch (Exception e) {
 			assertTrue(e.getMessage(),false);
 		}

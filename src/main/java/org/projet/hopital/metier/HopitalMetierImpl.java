@@ -2,13 +2,21 @@ package org.projet.hopital.metier;
 
 import java.util.List;
 
+import org.projet.hopital.dao.IhopitalDao;
 import org.projet.hopital.entities.DossierPatient;
 import org.projet.hopital.entities.Employee;
 import org.projet.hopital.entities.RendezVous;
 import org.projet.hopital.entities.Role;
-
+import org.springframework.transaction.annotation.Transactional;
+@Transactional
 public class HopitalMetierImpl implements IHopitalMetier {
-	private IHopitalMetier dao;
+	private IhopitalDao dao;
+	
+	
+	public void setDao(IhopitalDao dao) {
+		this.dao = dao;
+	}
+
 	@Override
 	public DossierPatient rechercherDossier(long idDossierPatient) {
 		return dao.rechercherDossier(idDossierPatient);
