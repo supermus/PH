@@ -22,7 +22,7 @@ public class HopitalController {
 		String prenom = null;
 		String nom = null;
 		Long idEmploye = null;
-		model.addAttribute("emplyee", new Employee(prenom, nom, idEmploye));//pour créer le formulaire
+		//model.addAttribute("emplyee", new Employee(prenom, nom, idEmploye));//pour créer le formulaire
 		Employee employee = null;
 		model.addAttribute("pageAdmin", metier.listeDossierPatient());// affichage
 		return "pageAdmin";
