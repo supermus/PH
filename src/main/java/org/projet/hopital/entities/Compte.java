@@ -48,7 +48,7 @@ public class Compte implements Serializable{
 	public void setActivated(boolean activated) {
 		this.activated = activated;
 	}
-	public Compte(Long iduser, String username, String password,
+	public Compte(String username, String password,
 			boolean activated) {
 		super();
 		this.iduser = iduser;

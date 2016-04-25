@@ -9,8 +9,7 @@ private static final long serialVersionUID = 1L;
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 private int idRole;
-private String nomRole;
-							
+private String nomRole;							
 @ManyToOne
 @JoinColumn( name = "idEmploye" )
 private Employee employe;

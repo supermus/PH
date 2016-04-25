@@ -19,7 +19,6 @@ public class hopitalDaoImpl implements IhopitalDao{
 	
 	@Override
 	public DossierPatient rechercherDossier(long idDossierPatient) {
-		
 		return em.find(DossierPatient.class,idDossierPatient);
 	}
 
@@ -43,7 +42,6 @@ public class hopitalDaoImpl implements IhopitalDao{
 
 	@Override
 	public List<DossierPatient> listeDossierPatient() {
-		
 		Query req=em.createQuery("select d from DossierPatient d");				
 		return req.getResultList();
 	}
@@ -64,9 +62,9 @@ public class hopitalDaoImpl implements IhopitalDao{
 
 	@Override
 	public void ajouterRdv(long idDossierPatient , RendezVous rdv) {
-		DossierPatient dp= em.find(DossierPatient.class, idDossierPatient);
+		/*DossierPatient dp= em.find(DossierPatient.class, idDossierPatient);
 		dp.getListRdv().add(rdv);
-		em.persist(dp);
+		em.persist(dp);*/
 	}
 
 	@Override
@@ -80,6 +78,22 @@ public class hopitalDaoImpl implements IhopitalDao{
 		listeDossierPatient().remove(rdv);
 				
 	}
+
+
+//pour le test 
+	@Override
+	public long ajouterMedical(Medical m) {
+		em.persist(m);
+		return m.getIdMedical();
+		
+	}
+
+
+	/*@Override
+	public List<Medical> listeMedical() {
+		Query req=em.createQuery("select d from medical d");				
+		return req.getResultList();
+	}*/
 	
 	
 }

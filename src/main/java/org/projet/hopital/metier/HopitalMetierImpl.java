@@ -2,16 +2,15 @@ package org.projet.hopital.metier;
 
 import java.util.List;
 
+
 import org.projet.hopital.dao.IhopitalDao;
-import org.projet.hopital.entities.DossierPatient;
-import org.projet.hopital.entities.Employee;
-import org.projet.hopital.entities.RendezVous;
-import org.projet.hopital.entities.Role;
+import org.projet.hopital.entities.*;
 import org.springframework.transaction.annotation.Transactional;
+
 @Transactional
 public class HopitalMetierImpl implements IAdminMetier {
-	private IhopitalDao dao;
 	
+	private IhopitalDao dao;
 	
 	public void setDao(IhopitalDao dao) {
 		this.dao = dao;
@@ -67,5 +66,16 @@ public class HopitalMetierImpl implements IAdminMetier {
 		dao.attribuerRole(idEmploye, r);
 
 	}
+//pour le test 
+	@Override
+	public Long ajouterMedical(Medical m) {
+		return dao.ajouterMedical(m) ;
+	}
+/*
+	@Override
+	public List<Medical> listeMedical() {
+		return dao.listeMedical();
+	}*/
 
+	
 }

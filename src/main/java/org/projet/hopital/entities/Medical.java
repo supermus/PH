@@ -1,14 +1,17 @@
 package org.projet.hopital.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-	@Entity
-	@Table(name="medical")
-public class Medical {
+
+@Entity
+@Table(name = "medical")
+public class Medical implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idMedical;
@@ -21,7 +24,6 @@ public class Medical {
 	}
 
 	public Medical(String motif, String observation, String desciption) {
-		super();
 		this.motif = motif;
 		this.observation = observation;
 		this.desciption = desciption;

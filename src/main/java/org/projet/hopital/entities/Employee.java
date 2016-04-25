@@ -1,39 +1,61 @@
 package org.projet.hopital.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="employee")
 public class Employee implements Serializable{
-	
-
-	private static final long serialVersionUID = 1L;
-	private String prenom;
-	private String nom;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long matricule;
 	private Long idEmploye;
-	
+	private String prenom;
+	private String nom;
+	private Long matricule;
 	@OneToMany
-	private List<DossierPatient> dossiers;
-	
+	@JoinColumn( name = "idDossierPatient" )
+	private Collection<DossierPatient> dossiers=new ArrayList<DossierPatient>();
 	@OneToMany
-	private List<RendezVous> rdv;
-	
+	@JoinColumn( name = "idRdv" )
+	private Collection<RendezVous> rdvs=new ArrayList<RendezVous>();
 	@OneToOne
+	@JoinColumn( name = "idRole" )
 	private Role role;
-	
 	@OneToOne
+	@JoinColumn( name = "iduser" )
 	private Compte compte;
 	
-	public Employee(String prenom, String nom, Long idEmploye) {
+	public Employee() {
+	}
+
+	public Employee(String prenom, String nom, Long matricule, Collection<DossierPatient> dossiers,
+			Collection<RendezVous> rdvs, Role role, Compte compte) {
 		super();
 		this.prenom = prenom;
 		this.nom = nom;
+		this.matricule = matricule;
+		this.dossiers = dossiers;
+		this.rdvs = rdvs;
+		this.role = role;
+		this.compte = compte;
+	}
+
+	public Long getIdEmploye() {
+		return idEmploye;
+	}
+
+	public void setIdEmploye(Long idEmploye) {
 		this.idEmploye = idEmploye;
 	}
 
@@ -61,20 +83,20 @@ public class Employee implements Serializable{
 		this.matricule = matricule;
 	}
 
-	public Long getNsecu() {
-		return idEmploye;
+	public Collection<DossierPatient> getDossiers() {
+		return dossiers;
 	}
 
-	public void setNsecu(Long nsecu) {
-		this.idEmploye = nsecu;
+	public void setDossiers(Collection<DossierPatient> dossiers) {
+		this.dossiers = dossiers;
 	}
 
-	public Long getIdEmploye() {
-		return idEmploye;
+	public Collection<RendezVous> getRdvs() {
+		return rdvs;
 	}
 
-	public void setIdEmploye(Long idEmploye) {
-		this.idEmploye = idEmploye;
+	public void setRdvs(Collection<RendezVous> rdvs) {
+		this.rdvs = rdvs;
 	}
 
 	public Role getRole() {
@@ -84,11 +106,15 @@ public class Employee implements Serializable{
 	public void setRole(Role role) {
 		this.role = role;
 	}
-	
-	
-	
-	
-	
-	
 
-}
+	public Compte getCompte() {
+		return compte;
+	}
+
+	public void setCompte(Compte compte) {
+		this.compte = compte;
+	}
+
+	
+	
+	}

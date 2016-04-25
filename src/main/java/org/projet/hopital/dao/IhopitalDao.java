@@ -1,8 +1,8 @@
 package org.projet.hopital.dao;
 
-import  org.projet.hopital.entities.*;
-
 import java.util.List;
+
+import org.projet.hopital.entities.*;
 
 public interface IhopitalDao {
 	
@@ -22,5 +22,10 @@ public interface IhopitalDao {
 	public long ajouterEmployee(Employee employee);
 	
 	public void attribuerRole(long idEmploye, Role r);
+	
+	//pour le test 
+	 
+	 
+	public  long ajouterMedical(Medical m);		
 	
 }	

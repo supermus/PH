@@ -6,36 +6,39 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
-
-	<bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		
+		<bean id="datasource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 		<property name="url" value="jdbc:mysql://localhost:3306/hopital"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value=""></property>
-	</bean>
-	<bean id="persistenceUnitManager"
-	class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
+		</bean>
+				
+		<bean id="persistenceUnitManager"
+		class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
 		<property name="defaultDataSource" ref="datasource"></property>
 		<property name="persistenceXmlLocations">
-			<list>
-				<value>classpath*:META-INF/persistence.xml</value>
-			</list>
+		<list>
+		<value>classpath*:META-INF/persistence.xml</value>
+		</list>
 		</property>
-	</bean>
-	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-	<property name="persistenceUnitManager" ref="persistenceUnitManager"></property>
-	<property name="persistenceUnitName" value="UP_HOPITAL"></property>
-	</bean>
-	
-	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-	<property name="entityManagerFactory" ref="entityManagerFactory"></property>
-	
-	</bean>
-	<tx:annotation-driven transaction-manager="transactionManager"/>
-	<context:annotation-config></context:annotation-config>
-	
-	<bean id="dao" class="org.projet.hopital.dao.hopitalDaoImpl"></bean>
-	<bean id="metier" class="org.projet.hopital.metier.HopitalMetierImpl">
-		<property name="dao" ref="dao"></property>
-	</bean>
-</beans> 
+		</bean>
+		<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitManager" ref="persistenceUnitManager"></property>
+		<property name="persistenceUnitName" value="UP_HOPITAL"></property>
+		</bean>
+		<bean id="transactionManager"
+		class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory"></property>
+		</bean>
+		<tx:annotation-driven transaction-manager="transactionManager"/>
+		<context:annotation-config></context:annotation-config>
+		
+		<bean id="dao" class="org.projet.hopital.dao.hopitalDaoImpl"></bean>
+		<bean id="metier" class="org.projet.hopital.metier.HopitalMetierImpl">
+			<property name="dao" ref="dao"></property>
+		</bean>
+
+</beans>
