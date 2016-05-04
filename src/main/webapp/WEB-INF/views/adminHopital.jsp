@@ -3,18 +3,18 @@
  <div id="formAdmin">
  
  	 <!-- employee = obj dans la methode Index -->
- 	<f:form modelAttribute="emplyee" action="saveEmpl" 
+ 	<f:form modelAttribute="employee" action="saveEmp" 
  		method="post" enctype="multipart/form-data">
  		<table>
  			<tr>
  			  <td> ID Employee </td>
- 			  <td> <f:input path="idEmplyee"/> </td>
- 			  <td> <f:errors path="idEmplyee" cssClass="errors"></f:errors> </td>
+ 			  <td> <f:input path="idEmploye"/> </td>
+ 			  <td> <f:errors path="idEmploye" cssClass="errors"></f:errors> </td>
  			</tr>
- 			<tr>
+ 			<tr> 
  			  <td> Nom Employee </td>
- 			  <td> <f:input path="nomEmplyee"/> </td>
- 			  <td> <f:errors path="nomEmplyee" cssClass="errors"></f:errors> </td>
+ 			  <td> <f:input path="nom"/> </td>
+ 			  <td> <f:errors path="nom" cssClass="errors"></f:errors> </td>
  			</tr>
  			<tr>
  			  <td> Matricule Employee </td>
